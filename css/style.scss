@@ -1,0 +1,249 @@
+// #### Primary Text
+$Verydarkdesaturatedblue: #1d1e35;
+$Softred: #f47c57;
+
+// #### Background gradient:
+$Softviolet: hsl(273, 75%, 66%);
+$Softblue: hsl(240, 73%, 65%);
+
+// #### Neutral Text
+$Verydarkgrayishblue: hsl(237, 12%, 33%);
+$Darkgrayishblue: hsl(240, 6%, 50%);
+
+// #### Dividers
+$Lightgrayishblue :  hsl(240, 5%, 91%) ;
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+html{
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    // background-image: linear-gradient(to bottom,$Softviolet,$Softblue);
+}
+
+body{
+    margin:0;
+    padding:0;
+    background-color: $Softviolet;
+    color : $Verydarkdesaturatedblue;
+    background-image: linear-gradient(to bottom,$Softviolet,$Softblue);
+    height:100vh;
+}
+.box{display:none}
+.container{
+    background-color: white;
+    margin:39vw auto 22vw;
+    border-radius: 30px;
+    width:87vw;
+    padding-bottom:11.2vw;
+    box-shadow: 0px 10px 50px 0px $Verydarkdesaturatedblue;
+
+
+    
+    .herodesktop{display:none;}
+
+    .heromobile{
+        // margin-top:;
+        width:63vw;
+        height:48vw;
+        margin:calc(-48vw*0.6) 12vw 0 12vw;
+        background-image:url(../images/bg-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-position-y: 98%;
+        background-size:100%;
+        background-position-x: center;
+        padding-bottom:8.5vw;
+    }
+
+    h1{
+        margin-top:1.4em;
+        margin-bottom:1.8em;
+        font-size:6vw;
+        text-align: center;
+    }
+
+    .question{
+        border-bottom:1px solid $Lightgrayishblue;
+        font-size:2.6vw;
+        margin:0 6.4vw 0 6.4vw;
+        padding:2em 0;
+        position:relative;
+
+       
+        
+        //  ---- pakai after -----
+            &::after{
+                content:"";
+                background-image: url(../images/icon-arrow-down.svg);
+                background-repeat: no-repeat;
+                width:1.6vw;
+                height:1.6vw;
+                right:3vw;
+                top:6.4vw;
+                position : absolute;
+            }
+     
+        
+    }
+   
+    .question:hover{
+            color:$Softred;
+            cursor: pointer;
+    }
+
+    .active{
+        color:$Verydarkgrayishblue;
+        font-weight: bold;
+        
+
+        p{
+            font-weight:normal;
+        }
+
+        &::after{
+            top:5.6vw;
+            transform:scaleY(-1);
+        }
+    }
+   
+    
+    p{
+        font-size:2.4vw;
+        margin:0;
+        margin-top:2em;
+        display:none;
+        
+    }
+
+}
+
+
+
+@media only screen and (min-width:992px){
+    
+    body{
+        position:relative;
+        background-image: linear-gradient(to bottom,$Softviolet,$Softblue);
+        // height:100vh;
+        height: 100vh;
+        background-repeat: no repeat;
+    }
+
+    .box{
+            display:block;
+            left:15vw;
+            width:8.3vw;
+            height:auto;
+            position:absolute;
+            top:17vw;
+            z-index:999;
+            // position:fixed;
+
+        }
+
+    .container{
+        // margin:auto;
+        margin:8vw 19vw 9vw 19vw;
+        width:64vw;
+        padding-bottom:0;
+        
+        position:relative;
+        overflow:hidden;
+        display:grid;
+        grid-template-areas:'hero h1'
+                            'hero faq';
+
+        grid-template-rows: 6.2vw auto;
+
+        box-shadow: 0px 10px 50px 0px $Verydarkdesaturatedblue;
+
+       
+
+        .heromobile{display:none;}
+
+        .herodesktop{
+            display:inline-block;
+            height:25vw;
+            margin-left:-6vw;
+            // margin:calc(-48vw*0.6) 12vw 0 12vw;
+            background-image:url(../images/bg-pattern-desktop.svg);
+            background-repeat: no-repeat;
+            background-position-y:60%;
+            background-size:150%;
+            background-position-x: right;
+            padding-bottom:5.5vw;
+            padding-top:4.8vw;
+            grid-area:hero;
+
+        }
+        
+        h1{
+            margin-top:1.4em;
+            // margin-bottom:1.8em;
+            font-size:1.6vw;
+            text-align: left;
+            grid-area:h1;
+            padding-left:4.4vw;
+            
+        }
+
+
+        .faq{
+            grid-area:faq;
+            
+            
+            .question{
+                // border-bottom:1px solid $Lightgrayishblue;
+                font-size:1.2vw;
+                width:24vw;
+                margin:0 4.4vw 0 4.4vw;
+                padding:1.3em 0;
+                // position:relative;
+        
+               
+                
+                // //  ---- pakai after -----
+                    &::after{
+                //         content:"";
+                //         background-image: url(../images/icon-arrow-down.svg);
+                //         background-repeat: no-repeat;
+                //         width:1.6vw;
+                //         height:1.6vw;
+                        right:0vw;
+                        top:2.4vw;
+                //         position : absolute;
+                    }
+             
+                
+            }
+
+           
+        }
+    
+        .active{
+            color:$Verydarkgrayishblue;
+            font-weight: bold;
+            
+    
+            p{
+                font-weight:normal;
+            }
+    
+            &::after{
+                top:1vw;
+                transform:scaleY(-1);
+            }
+        }
+       
+        
+        p{
+            font-size:1vw;
+            margin:0;
+            margin-top:1.5em;
+            display:none;
+            
+        }
+        
+    }
+    
+}

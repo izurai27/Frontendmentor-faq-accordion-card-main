@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+html {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #af67e9;
+  color: #1d1e35;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background-image: linear-gradient(to bottom, #af67e9, #6565e7);
+  height: 100vh;
+}
+
+.box {
+  display: none;
+}
+
+.container {
+  background-color: white;
+  margin: 39vw auto 22vw;
+  border-radius: 30px;
+  width: 87vw;
+  padding-bottom: 11.2vw;
+  -webkit-box-shadow: 0px 10px 50px 0px #1d1e35;
+          box-shadow: 0px 10px 50px 0px #1d1e35;
+}
+
+.container .herodesktop {
+  display: none;
+}
+
+.container .heromobile {
+  width: 63vw;
+  height: 48vw;
+  margin: calc(-48vw*0.6) 12vw 0 12vw;
+  background-image: url(../images/bg-pattern-mobile.svg);
+  background-repeat: no-repeat;
+  background-position-y: 98%;
+  background-size: 100%;
+  background-position-x: center;
+  padding-bottom: 8.5vw;
+}
+
+.container h1 {
+  margin-top: 1.4em;
+  margin-bottom: 1.8em;
+  font-size: 6vw;
+  text-align: center;
+}
+
+.container .question {
+  border-bottom: 1px solid #e7e7e9;
+  font-size: 2.6vw;
+  margin: 0 6.4vw 0 6.4vw;
+  padding: 2em 0;
+  position: relative;
+}
+
+.container .question::after {
+  content: "";
+  background-image: url(../images/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  width: 1.6vw;
+  height: 1.6vw;
+  right: 3vw;
+  top: 6.4vw;
+  position: absolute;
+}
+
+.container .question:hover {
+  color: #f47c57;
+  cursor: pointer;
+}
+
+.container .active {
+  color: #4a4b5e;
+  font-weight: bold;
+}
+
+.container .active p {
+  font-weight: normal;
+}
+
+.container .active::after {
+  top: 5.6vw;
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+}
+
+.container p {
+  font-size: 2.4vw;
+  margin: 0;
+  margin-top: 2em;
+  display: none;
+}
+
+@media only screen and (min-width: 992px) {
+  body {
+    position: relative;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+    background-image: linear-gradient(to bottom, #af67e9, #6565e7);
+    height: 100vh;
+    background-repeat: no repeat;
+  }
+  .box {
+    display: block;
+    left: 15vw;
+    width: 8.3vw;
+    height: auto;
+    position: absolute;
+    top: 17vw;
+    z-index: 999;
+  }
+  .container {
+    margin: 8vw 19vw 9vw 19vw;
+    width: 64vw;
+    padding-bottom: 0;
+    position: relative;
+    overflow: hidden;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: 'hero h1' 'hero faq';
+    -ms-grid-rows: 6.2vw auto;
+        grid-template-rows: 6.2vw auto;
+    -webkit-box-shadow: 0px 10px 50px 0px #1d1e35;
+            box-shadow: 0px 10px 50px 0px #1d1e35;
+  }
+  .container .heromobile {
+    display: none;
+  }
+  .container .herodesktop {
+    display: inline-block;
+    height: 25vw;
+    margin-left: -6vw;
+    background-image: url(../images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position-y: 60%;
+    background-size: 150%;
+    background-position-x: right;
+    padding-bottom: 5.5vw;
+    padding-top: 4.8vw;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: hero;
+  }
+  .container h1 {
+    margin-top: 1.4em;
+    font-size: 1.6vw;
+    text-align: left;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: h1;
+    padding-left: 4.4vw;
+  }
+  .container .faq {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: faq;
+  }
+  .container .faq .question {
+    font-size: 1.2vw;
+    width: 24vw;
+    margin: 0 4.4vw 0 4.4vw;
+    padding: 1.3em 0;
+  }
+  .container .faq .question::after {
+    right: 0vw;
+    top: 2.4vw;
+  }
+  .container .active {
+    color: #4a4b5e;
+    font-weight: bold;
+  }
+  .container .active p {
+    font-weight: normal;
+  }
+  .container .active::after {
+    top: 1vw;
+    -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+  }
+  .container p {
+    font-size: 1vw;
+    margin: 0;
+    margin-top: 1.5em;
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
